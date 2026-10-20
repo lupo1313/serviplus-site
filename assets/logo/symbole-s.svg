@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-8 0 440 300" role="img" aria-label="Symbole S Groupe Serviplus"><defs><linearGradient id="sky" x1="0" y1="0" x2="1" y2="1" gradientUnits="objectBoundingBox"><stop stop-color="#15C8F7"/><stop offset=".55" stop-color="#079CF5"/><stop offset="1" stop-color="#0063E6"/></linearGradient><linearGradient id="deep" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#06152D"/><stop offset=".5" stop-color="#063E83"/><stop offset="1" stop-color="#057BE9"/></linearGradient><linearGradient id="blue" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#17C2FF"/><stop offset="1" stop-color="#043A96"/></linearGradient><linearGradient id="silver" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#DCE2EA"/><stop offset="1" stop-color="#8C9BAE"/></linearGradient></defs><g>
+<path d="M256 22 H422 L368 75 H270 C244 75 235 90 246 106 L324 179 H244 L183 121 C153 92 160 64 184 42 C201 26 225 22 256 22Z" fill="url(#sky)"/>
+<path d="M256 22 H422 L368 75 H270 C244 75 235 90 246 106 C221 94 211 61 228 39 C236 29 244 25 256 22Z" fill="url(#deep)"/>
+<path d="M269 102 H326 C365 102 392 133 392 171 C392 197 381 215 359 233 L297 280 H112 L165 230 H286 C313 230 329 214 329 193 C329 178 321 169 310 158Z" fill="url(#deep)"/>
+<path d="M269 102 H326 C365 102 392 133 392 171 C392 197 381 215 359 233 L324 259 C350 228 346 201 325 181 C314 170 299 158 283 142Z" fill="url(#sky)"/>
+<path d="M54 118 H124 L140 136 H36Z" fill="url(#blue)"/>
+<path d="M17 157 H159 L176 175 H0Z" fill="url(#blue)"/>
+<path d="M73 198 H147 L130 217 H55Z" fill="url(#silver)"/>
+</g></svg>
