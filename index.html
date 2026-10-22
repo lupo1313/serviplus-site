@@ -27,13 +27,10 @@
   <meta name="twitter:description" content="Produits surgelés, frais et d'épicerie pour la restauration. Livraison frigorifique dans les Bouches-du-Rhône depuis 1995.">
   <meta name="twitter:image" content="https://www.groupeserviplus.com/assets/img/og-image.jpg">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap" media="print" onload="this.media='all'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap"></noscript>
+  <link rel="preload" href="assets/fonts/poppins-800.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin>
 
-  <link rel="preload" as="image" href="assets/img/hero-locaux.webp" fetchpriority="high">
+  <link rel="preload" as="image" href="assets/img/hero-locaux.webp" imagesrcset="assets/img/hero-locaux-480.webp 480w, assets/img/hero-locaux.webp 800w" imagesizes="100vw" fetchpriority="high">
   <link rel="stylesheet" href="assets/css/styles.css">
 
   <script type="application/ld+json">
@@ -112,7 +109,7 @@
 
     <!-- ============ HERO ============ -->
     <section class="hero">
-      <img class="hero__bg" src="assets/img/hero-locaux.webp" alt="Entrepôt du Groupe SERVIPLUS à Châteauneuf-les-Martigues, enseigne SERVIPLUS sur la façade" width="1000" height="750" fetchpriority="high">
+      <img class="hero__bg" src="assets/img/hero-locaux.webp" srcset="assets/img/hero-locaux-480.webp 480w, assets/img/hero-locaux.webp 800w" sizes="100vw" alt="Entrepôt du Groupe SERVIPLUS à Châteauneuf-les-Martigues, enseigne SERVIPLUS sur la façade" width="800" height="600" fetchpriority="high">
       <div class="hero__overlay"></div>
       <div class="container hero__inner">
         <h1 class="hero__title">L'alimentaire des pros,<br>c'est <span class="accent">notre métier.</span></h1>
@@ -210,6 +207,20 @@
             <a class="btn btn--outline" href="produits.html">Voir les familles</a>
           </div>
           <p class="cat__note">Format PDF &middot; 25 pages &middot; 2 Mo</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ AVIS CLIENTS ============ -->
+    <section class="section">
+      <div class="container">
+        <span class="kicker">Avis clients</span>
+        <h2 class="section__title">Ils nous font confiance</h2>
+        <div class="reviews__grid">
+          <blockquote class="review reveal"><p class="review__quote">Super produits, excellente qualité et un très bon service. Entreprise très réactive et fiable.</p><footer class="review__author">Xavier</footer></blockquote>
+          <blockquote class="review reveal"><p class="review__quote">Personnel sérieux et professionnel, accueil au top. Très à l'écoute dans le service client, jamais déçu.</p><footer class="review__author">Pascal</footer></blockquote>
+          <blockquote class="review reveal"><p class="review__quote">Que du positif : qualité, réactivité, collaboratif, et en plus géré par une famille formidable.</p><footer class="review__author">Bureau Marignane Natation</footer></blockquote>
+          <blockquote class="review reveal"><p class="review__quote">Accueil formidable, société très sérieuse. Merci.</p><footer class="review__author">Fawzia</footer></blockquote>
         </div>
       </div>
     </section>

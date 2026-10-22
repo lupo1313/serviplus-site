@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page introuvable (404) | Groupe SERVIPLUS</title>
+  <meta name="robots" content="noindex, follow">
+  <meta name="theme-color" content="#0b1d40">
+  <style>
+    *{box-sizing:border-box}
+    body{margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;
+      font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+      background:radial-gradient(130% 90% at 80% 0%,#16347a,#0b1d40 55%,#061530);color:#e6edf8;text-align:center;padding:24px}
+    .box{max-width:520px}
+    .wordmark{font-weight:800;font-size:1.4rem;letter-spacing:.02em;margin-bottom:28px}
+    .wordmark b{color:#fff}.wordmark span{color:#4f9bff}
+    .code{font-size:clamp(3.5rem,14vw,6rem);font-weight:800;line-height:1;color:#fff;letter-spacing:-.03em}
+    h1{font-size:clamp(1.2rem,4vw,1.6rem);margin:.4rem 0 .6rem;color:#fff;font-weight:700}
+    p{color:#b8c7e2;margin:0 0 1.8rem;line-height:1.6}
+    a.btn{display:inline-flex;align-items:center;gap:.5em;background:#fff;color:#0b1d40;
+      font-weight:600;text-decoration:none;padding:.8em 1.5em;border-radius:8px}
+    a.btn:hover{background:#eef3fb}
+    a.alt{display:block;margin-top:16px;color:#9fb6da;font-size:.9rem}
+  </style>
+</head>
+<body>
+  <div class="box">
+    <div class="wordmark">Groupe <b>SERVI</b><span>PLUS</span></div>
+    <div class="code">404</div>
+    <h1>Cette page n'existe pas</h1>
+    <p>Le lien est peut-être erroné ou la page a été déplacée. Revenez à l'accueil pour retrouver nos produits et nos coordonnées.</p>
+    <a class="btn" id="home" href="/serviplus-site/">Retour à l'accueil</a>
+    <a class="alt" id="contact" href="/serviplus-site/contact.html">Ou nous contacter</a>
+  </div>
+  <script>
+    (function(){
+      var base = location.hostname.indexOf("github.io") !== -1 ? "/serviplus-site/" : "/";
+      document.getElementById("home").href = base;
+      document.getElementById("contact").href = base + "contact.html";
+    })();
+  </script>
+</body>
+</html>
