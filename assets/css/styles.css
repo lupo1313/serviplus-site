@@ -121,7 +121,7 @@ strong{color:var(--ink);font-weight:700}
 .hero__bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 42%;z-index:-2}
 .hero__overlay{position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg, rgba(8,19,43,.18) 0%, rgba(8,19,43,.06) 26%, rgba(8,19,43,.55) 56%, rgba(6,14,34,.95) 100%)}
 .hero__inner{align-self:flex-end;width:100%;padding-block:clamp(34px,5vw,56px)}
-.hero__title{font-size:clamp(2rem,5.6vw,3.3rem);font-weight:800;color:#fff;max-width:17ch;margin-bottom:.7rem;text-shadow:0 2px 24px rgba(5,14,33,.45)}
+.hero__title{font-size:clamp(1.6rem,6vw,3.2rem);font-weight:800;color:#fff;margin-bottom:.7rem;text-wrap:balance;text-shadow:0 2px 24px rgba(5,14,33,.45)}
 .hero__title .accent{color:var(--blue-400)}
 .hero__text{font-size:clamp(1rem,1.9vw,1.12rem);color:#e3ebf6;max-width:52ch;margin-bottom:1.5rem;text-shadow:0 1px 14px rgba(5,14,33,.5)}
 .hero__actions{display:flex;flex-wrap:wrap;align-items:center;gap:14px 22px}
