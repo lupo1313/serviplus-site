@@ -9,23 +9,33 @@ Compatible GitHub Pages et Hostinger.
 
 ---
 
-## Structure
+## Structure (site multipage)
 
 ```
 serviplus-site/
-├── index.html                 # La page (navigation par ancres)
+├── index.html                 # Accueil (hero + chiffres animés + aperçus)
+├── produits.html              # Nos produits (familles + catalogue PDF)
+├── entreprise.html            # L'entreprise (histoire, stockage, logistique)
+├── livraison.html             # Livraison (zone + transport frigorifique)
+├── contact.html               # Contact (coordonnées + actions directes)
+├── mentions-legales.html      # Mentions légales + RGPD
 ├── robots.txt
 ├── sitemap.xml
 ├── .nojekyll                  # Pour GitHub Pages
 ├── README.md
 └── assets/
     ├── css/styles.css
-    ├── js/main.js
-    ├── img/                   # Photos optimisées en WebP + favicons + image Open Graph
+    ├── js/main.js             # Menu mobile, accordéon footer, compteurs animés
+    ├── img/                   # Photos WebP + favicons + image Open Graph
     ├── logo/                  # Logos vectoriels (SVG)
     └── catalogue/
-        └── catalogue-serviplus.pdf   # Catalogue 26 pages (généré depuis les pages fournies)
+        └── catalogue-serviplus.pdf   # Catalogue 25 pages (couverture au nouveau logo)
 ```
+
+Navigation : Accueil · Nos produits · L'entreprise · Livraison · Contact.
+Header et footer sont dupliqués en HTML dans chaque page (site 100 % statique),
+l'état « page active » est marqué par `aria-current="page"`. Liens 100 % relatifs
+(fonctionne sous le sous-chemin GitHub Pages `/serviplus-site/` et sous domaine final).
 
 ## Lancer le site en local
 
