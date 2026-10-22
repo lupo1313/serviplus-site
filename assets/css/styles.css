@@ -145,8 +145,8 @@ strong{color:var(--ink);font-weight:700}
 .split__media img{width:100%;border-radius:12px;box-shadow:var(--shadow)}
 .split__media{position:relative}
 .split__badge{position:absolute;left:18px;bottom:-16px;display:inline-flex;align-items:center;gap:12px;background:var(--navy);color:#fff;padding:14px 20px;border-radius:10px;box-shadow:var(--shadow)}
-.split__badge strong{font-family:var(--ff-head);font-size:1.25rem;display:block;line-height:1.1}
-.split__badge span{font-size:.82rem;color:#b6c6e0}
+.split__badge strong{font-family:var(--ff-head);font-size:1.25rem;display:block;line-height:1.1;color:#fff}
+.split__badge span{font-size:.82rem;color:#c7d6ee}
 .split__content p + p{margin-top:1rem}
 .split__content .btn{margin-top:1.4rem}
 .lead{font-size:1.06rem;color:var(--body)}
