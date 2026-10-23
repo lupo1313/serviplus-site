@@ -165,9 +165,10 @@ strong{color:var(--ink);font-weight:700}
    Familles de produits (mise en page éditoriale)
    ========================================================= */
 .families{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(14px,2vw,22px)}
-.family{display:flex;flex-direction:column;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#fff;transition:transform .25s ease,box-shadow .25s ease}
+.families>li{display:flex}
+.family{display:flex;flex-direction:column;width:100%;height:100%;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#fff;transition:transform .25s ease,box-shadow .25s ease}
 .family img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover;background:var(--off);transition:transform .4s ease}
-.family.is-packshot img{object-fit:contain;padding:12%;background:#fff}
+.family.is-packshot img{object-fit:contain;padding:6%;background:#fff}
 .family__label{display:block;padding:13px 16px;color:var(--ink);font-family:var(--ff-head);font-weight:700;font-size:1rem;border-top:1px solid var(--line)}
 .family:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
 .family:hover img{transform:scale(1.04)}
