@@ -186,6 +186,32 @@ strong{color:var(--ink);font-weight:700}
 .cat__note{margin-top:.9rem;font-size:.84rem;color:var(--muted)}
 
 /* =========================================================
+   Page produits : nav ancres + familles
+   ========================================================= */
+.prodnav{display:flex;gap:8px;overflow-x:auto;padding:4px 0 12px;margin-top:6px;scrollbar-width:thin}
+.prodnav a{flex:0 0 auto;border:1px solid var(--line);border-radius:999px;padding:8px 14px;font-size:.88rem;font-weight:600;color:var(--ink);white-space:nowrap;background:#fff}
+.prodnav a:hover{border-color:var(--blue);color:var(--blue)}
+.prodgrid{display:grid;grid-template-columns:1fr;gap:clamp(16px,2.2vw,24px);margin-top:8px}
+.prodfam{border:1px solid var(--line);border-radius:14px;padding:clamp(20px,2.4vw,26px);background:#fff;scroll-margin-top:92px}
+.prodfam__head{display:flex;align-items:center;gap:14px;margin-bottom:10px}
+.prodfam__thumb,.prodfam__icon{width:64px;height:64px;border-radius:10px;background:var(--off);border:1px solid var(--line);flex:0 0 auto}
+.prodfam__thumb{object-fit:contain;padding:6px}
+.prodfam__icon{display:grid;place-items:center;color:var(--blue)}
+.prodfam h2{font-size:1.2rem}
+.prodfam__intro{color:var(--body);margin-bottom:10px}
+.prodfam__hfc{height:62px;width:auto;margin:0 0 12px}
+.prodfam__list{margin:0 0 14px;padding-left:1.15em}
+.prodfam__list li{list-style:disc;padding:2px 0;font-size:.92rem;color:var(--body)}
+.prodfam__more{font-family:var(--ff-head);font-weight:600;color:var(--blue)}
+.prodfam__more:hover{text-decoration:underline;text-underline-offset:2px}
+@media (min-width:720px){.prodgrid{grid-template-columns:1fr 1fr}}
+@media (min-width:900px){.prodnav{flex-wrap:wrap;overflow:visible}}
+
+/* Bouton outline blanc sur fond sombre */
+.btn--ghost-light{background:transparent;color:#fff;border-color:rgba(255,255,255,.6)}
+.btn--ghost-light:hover{background:#fff;color:var(--navy);border-color:#fff}
+
+/* =========================================================
    Intro de page intérieure (compacte, pas de hero géant)
    ========================================================= */
 .pagehead{background:var(--navy);color:#cdd9ec;padding:clamp(34px,5vw,56px) 0 clamp(30px,4vw,44px)}
