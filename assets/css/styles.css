@@ -4,10 +4,7 @@
    ========================================================= */
 
 /* ---------- Polices auto-hébergées (RGPD, pas de requête Google) ---------- */
-@font-face{font-family:'Inter';font-style:normal;font-weight:400;font-display:swap;src:url(../fonts/inter-400.woff2) format('woff2')}
-@font-face{font-family:'Inter';font-style:normal;font-weight:500;font-display:swap;src:url(../fonts/inter-500.woff2) format('woff2')}
-@font-face{font-family:'Inter';font-style:normal;font-weight:600;font-display:swap;src:url(../fonts/inter-600.woff2) format('woff2')}
-@font-face{font-family:'Inter';font-style:normal;font-weight:700;font-display:swap;src:url(../fonts/inter-700.woff2) format('woff2')}
+@font-face{font-family:'Inter';font-style:normal;font-weight:400 700;font-display:swap;src:url(../fonts/inter-var.woff2) format('woff2')}
 @font-face{font-family:'Poppins';font-style:normal;font-weight:600;font-display:swap;src:url(../fonts/poppins-600.woff2) format('woff2')}
 @font-face{font-family:'Poppins';font-style:normal;font-weight:700;font-display:swap;src:url(../fonts/poppins-700.woff2) format('woff2')}
 @font-face{font-family:'Poppins';font-style:normal;font-weight:800;font-display:swap;src:url(../fonts/poppins-800.woff2) format('woff2')}
@@ -20,7 +17,7 @@
   --blue-400:#4f9bff;
   --ink:#13233c;
   --body:#45566d;
-  --muted:#78859a;
+  --muted:#5f6b7e;
   --line:#e6ebf2;
   --paper:#ffffff;
   --off:#f5f8fc;
@@ -315,6 +312,16 @@ strong{color:var(--ink);font-weight:700}
 .link{color:var(--blue);font-weight:600;text-decoration:none}
 .link:hover{text-decoration:underline;text-underline-offset:2px}
 
+/* Utilitaires d'espacement + petites classes (remplacent les styles inline) */
+.u-mt-8{margin-top:.8rem}
+.u-mt-12{margin-top:1.2rem}
+.u-mt-14{margin-top:1.4rem}
+.u-mt-16{margin-top:1.6rem}
+.section__title.is-sm{font-size:1.4rem}
+.contact__note{margin-top:1.4rem;font-size:.9rem;color:var(--muted)}
+.zone__label{font-weight:600;color:var(--ink)}
+.families{margin-top:clamp(24px,3vw,40px)}
+
 /* Étapes "comment ça marche" */
 .steps{display:grid;grid-template-columns:1fr;gap:clamp(20px,3vw,34px);margin-top:clamp(24px,3vw,40px);padding:0;list-style:none}
 .step{margin:0}
@@ -355,8 +362,8 @@ strong{color:var(--ink);font-weight:700}
 .to-top svg{width:22px;height:22px}
 
 /* ---------- Apparition discrète au scroll ---------- */
-.reveal{opacity:0;transform:translateY(18px);transition:opacity .5s ease,transform .5s ease}
-.reveal.is-in{opacity:1;transform:none}
+.js .reveal{opacity:0;transform:translateY(18px);transition:opacity .5s ease,transform .5s ease}
+.js .reveal.is-in{opacity:1;transform:none}
 
 /* =========================================================
    Responsive
@@ -439,7 +446,7 @@ strong{color:var(--ink);font-weight:700}
 /* ----- Préférence mouvement réduit ----- */
 @media (prefers-reduced-motion:reduce){
   *{animation-duration:.001ms !important;animation-iteration-count:1 !important;transition-duration:.001ms !important;scroll-behavior:auto}
-  .reveal{opacity:1;transform:none}
+  .js .reveal{opacity:1;transform:none}
 }
 
 /* =========================================================
