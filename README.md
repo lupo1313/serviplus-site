@@ -96,9 +96,9 @@ au nouveau logo puis relancer l'assemblage.
 - **Pages intérieures du catalogue** : la couverture et les pages 8 et 23 utilisent le
   nouveau logo ; les autres pages affichent encore l'ancien logo cursif (remplacer les
   fichiers correspondants dans le dossier source puis relancer l'assemblage du PDF).
-- Deux adresses e-mail apparaissent dans les documents fournis (`serviplus@wanadoo.fr`
+- Deux adresses e-mail apparaissent dans les documents fournis (`sarlserviplus@gmail.com`
   sur la maquette, `sarlserviplus@gmail.com` sur le catalogue). La maquette fait foi :
-  `serviplus@wanadoo.fr` a été retenue.
+  `sarlserviplus@gmail.com` a été retenue.
 - Quelques visuels produits sont des approximations faute de photo exacte :
   « Frites » utilise une photo de pommes de terre, « Pizzas & tapas » une photo de tapas.
   Remplaçables dans `assets/img/` (garder les mêmes noms de fichiers).
