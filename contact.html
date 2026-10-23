@@ -29,7 +29,8 @@
   {
     "@context":"https://schema.org","@type":"LocalBusiness","name":"Groupe SERVIPLUS",
     "url":"https://www.groupeserviplus.com/contact.html","telephone":"+33442109410","email":"sarlserviplus@gmail.com",
-    "image":"https://www.groupeserviplus.com/assets/img/og-image.jpg","foundingDate":"1995",
+    "image":"https://www.groupeserviplus.com/assets/img/og-image.jpg","foundingDate":"1995-03-23",
+    "legalName":"SERVIPLUS","vatID":"FR27400267498","sameAs":["https://share.google/cPtYVRo3e0YYLz8D6"],
     "address":{"@type":"PostalAddress","streetAddress":"7 Avenue de la Lardière - ZAC Essor La Valampe","postalCode":"13220","addressLocality":"Châteauneuf-les-Martigues","addressRegion":"Bouches-du-Rhône","addressCountry":"FR"},
     "openingHoursSpecification":[
       {"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"08:30","closes":"12:00"},
@@ -67,6 +68,7 @@
           <a class="btn btn--primary nav__cta" href="contact.html">Nous contacter</a>
         </div>
       </nav>
+      <a class="header__call" href="tel:+33442109410" aria-label="Appeler le 04 42 10 94 10"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.9 15.9 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25c1.1.37 2.3.57 3.6.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.3.2 2.5.57 3.6a1 1 0 0 1-.25 1l-2.22 2.2Z" fill="currentColor"/></svg></a>
       <button class="burger" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="menu" data-open-menu>
         <span></span><span></span><span></span>
       </button>
@@ -84,7 +86,98 @@
       </div>
     </section>
 
-    <section class="section">
+    <!-- ============ DEVENIR CLIENT (formulaire) ============ -->
+    <section class="section" id="devenir-client">
+      <div class="container">
+        <div class="formwrap">
+          <div class="formwrap__intro">
+            <span class="kicker">Devenir client</span>
+            <h2 class="section__title">Ouvrez votre compte pro ou faites-vous rappeler</h2>
+            <p>Remplissez ce formulaire, on vous recontacte rapidement. Vous pouvez aussi appeler directement le <a class="link" href="tel:+33442109410">04 42 10 94 10</a>.</p>
+          </div>
+          <form class="form" id="contact-form" action="https://api.web3forms.com/submit" method="POST" novalidate>
+            <!-- TODO-CLIENT: remplacer TODO_WEB3FORMS_KEY par la vraie clé Web3Forms -->
+            <input type="hidden" name="access_key" value="TODO_WEB3FORMS_KEY">
+            <input type="hidden" name="subject" value="Nouveau contact pro - site SERVIPLUS">
+            <input type="hidden" name="from_name" value="Site Groupe SERVIPLUS">
+            <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+            <div class="form__row">
+              <div class="field">
+                <label for="f-etab">Nom de l'établissement <span class="req">*</span></label>
+                <input id="f-etab" name="etablissement" type="text" required autocomplete="organization" aria-describedby="f-etab-err">
+                <p class="field__err" id="f-etab-err" hidden>Merci d'indiquer le nom de votre établissement.</p>
+              </div>
+              <div class="field">
+                <label for="f-type">Type d'établissement</label>
+                <select id="f-type" name="type">
+                  <option value="">Choisir…</option>
+                  <option>Snack</option>
+                  <option>Pizzeria</option>
+                  <option>Boulangerie</option>
+                  <option>Restaurant</option>
+                  <option>Collectivité</option>
+                  <option>Autre</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form__row">
+              <div class="field">
+                <label for="f-ville">Ville</label>
+                <input id="f-ville" name="ville" type="text" autocomplete="address-level2">
+              </div>
+              <div class="field">
+                <label for="f-tel">Téléphone <span class="req">*</span></label>
+                <input id="f-tel" name="telephone" type="tel" required autocomplete="tel" inputmode="tel" aria-describedby="f-tel-err">
+                <p class="field__err" id="f-tel-err" hidden>Merci d'indiquer un numéro de téléphone.</p>
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="f-email">E-mail</label>
+              <input id="f-email" name="email" type="email" autocomplete="email">
+            </div>
+
+            <fieldset class="field fieldset">
+              <legend>Familles qui vous intéressent</legend>
+              <div class="checks">
+                <label class="check"><input type="checkbox" name="familles[]" value="Pommes de terre"> Pommes de terre</label>
+                <label class="check"><input type="checkbox" name="familles[]" value="Pains"> Pains</label>
+                <label class="check"><input type="checkbox" name="familles[]" value="Pains hamburger"> Pains hamburger</label>
+                <label class="check"><input type="checkbox" name="familles[]" value="Volaille"> Volaille</label>
+                <label class="check"><input type="checkbox" name="familles[]" value="Bœuf"> Bœuf</label>
+                <label class="check"><input type="checkbox" name="familles[]" value="Poisson"> Poisson</label>
+                <label class="check"><input type="checkbox" name="familles[]" value="Kebab"> Kebab</label>
+                <label class="check"><input type="checkbox" name="familles[]" value="Halal"> Halal</label>
+                <label class="check"><input type="checkbox" name="familles[]" value="Tapas"> Tapas</label>
+                <label class="check"><input type="checkbox" name="familles[]" value="Sauces & garnitures"> Sauces &amp; garnitures</label>
+                <label class="check"><input type="checkbox" name="familles[]" value="Huiles"> Huiles</label>
+                <label class="check"><input type="checkbox" name="familles[]" value="Boissons"> Boissons</label>
+                <label class="check"><input type="checkbox" name="familles[]" value="Desserts"> Desserts</label>
+                <label class="check"><input type="checkbox" name="familles[]" value="Glaces"> Glaces</label>
+              </div>
+            </fieldset>
+
+            <div class="field">
+              <label for="f-msg">Message</label>
+              <textarea id="f-msg" name="message" rows="4" autocomplete="off"></textarea>
+            </div>
+
+            <label class="check check--consent">
+              <input type="checkbox" name="consentement" required aria-describedby="f-consent-err">
+              <span>J'accepte que mes données soient utilisées pour être recontacté. Voir la <a class="link" href="mentions-legales.html#donnees">politique de confidentialité</a>. <span class="req">*</span></span>
+            </label>
+            <p class="field__err" id="f-consent-err" hidden>Merci de cocher cette case pour continuer.</p>
+
+            <button type="submit" class="btn btn--primary form__submit">Envoyer ma demande</button>
+            <p class="form__status" id="form-status" role="status" aria-live="polite" hidden></p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--off">
       <div class="container contact">
         <!-- Coordonnées -->
         <div class="contact__card reveal">
@@ -151,8 +244,8 @@
           </ul>
         </div>
       </nav>
-      <div class="footer__col footer__acc">
-        <button class="footer__acc-head" type="button" aria-expanded="false">Contact
+      <div class="footer__col footer__acc is-open">
+        <button class="footer__acc-head" type="button" aria-expanded="true">Contact
           <svg class="footer__acc-chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </button>
         <div class="footer__acc-body">
@@ -177,6 +270,11 @@
   <button class="to-top" type="button" aria-label="Revenir en haut de la page" data-to-top>
     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5 5 12m7-7 7 7M12 5v15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
   </button>
+
+  <nav class="mobilebar" aria-label="Actions rapides">
+    <a class="mobilebar__btn mobilebar__call" href="tel:+33442109410"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.9 15.9 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25c1.1.37 2.3.57 3.6.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.3.2 2.5.57 3.6a1 1 0 0 1-.25 1l-2.22 2.2Z" fill="currentColor"/></svg>Appeler</a>
+    <a class="mobilebar__btn mobilebar__cta" href="contact.html#devenir-client">Devenir client</a>
+  </nav>
 
   <script src="assets/js/main.js" defer></script>
 </body>

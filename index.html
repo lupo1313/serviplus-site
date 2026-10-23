@@ -42,9 +42,12 @@
     "url": "https://www.groupeserviplus.com/",
     "telephone": "+33442109410",
     "email": "sarlserviplus@gmail.com",
-    "foundingDate": "1995",
+    "foundingDate": "1995-03-23",
+    "legalName": "SERVIPLUS",
+    "vatID": "FR27400267498",
     "image": "https://www.groupeserviplus.com/assets/img/og-image.jpg",
     "logo": "https://www.groupeserviplus.com/assets/logo/logo-serviplus.svg",
+    "sameAs": ["https://share.google/cPtYVRo3e0YYLz8D6"],
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "7 Avenue de la Lardière - ZAC Essor La Valampe",
@@ -98,6 +101,7 @@
           <a class="btn btn--primary nav__cta" href="contact.html">Nous contacter</a>
         </div>
       </nav>
+      <a class="header__call" href="tel:+33442109410" aria-label="Appeler le 04 42 10 94 10"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.9 15.9 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25c1.1.37 2.3.57 3.6.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.3.2 2.5.57 3.6a1 1 0 0 1-.25 1l-2.22 2.2Z" fill="currentColor"/></svg></a>
       <button class="burger" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="menu" data-open-menu>
         <span></span><span></span><span></span>
       </button>
@@ -115,8 +119,8 @@
         <h1 class="hero__title">L'alimentaire des pros,<br>c'est <span class="accent">notre métier.</span></h1>
         <p class="hero__text">Grossiste en produits surgelés, frais et d'épicerie pour les professionnels de la restauration dans les Bouches-du-Rhône depuis 1995.</p>
         <div class="hero__actions">
-          <a class="btn btn--white" href="produits.html">Découvrir nos produits<span class="btn__arrow" aria-hidden="true">→</span></a>
-          <a class="hero__link" href="contact.html">Nous contacter<span class="btn__arrow" aria-hidden="true">→</span></a>
+          <a class="btn btn--white" href="contact.html#devenir-client">Devenir client<span class="btn__arrow" aria-hidden="true">→</span></a>
+          <a class="hero__link" href="produits.html">Voir nos produits<span class="btn__arrow" aria-hidden="true">→</span></a>
         </div>
       </div>
     </section>
@@ -130,6 +134,19 @@
           <div class="stat"><div class="stat__num" data-count="30" data-suffix="+">30+</div><div class="stat__label">Années d'existence</div></div>
           <div class="stat"><div class="stat__num" data-count="700" data-suffix=" m³">700 m³</div><div class="stat__label">de froid négatif</div></div>
         </div>
+      </div>
+    </section>
+
+    <!-- ============ COMMENT ÇA MARCHE ============ -->
+    <section class="section">
+      <div class="container">
+        <span class="kicker">Comment ça marche</span>
+        <h2 class="section__title">Commander chez nous, en 3 étapes</h2>
+        <ol class="steps">
+          <li class="step reveal"><span class="step__num">1</span><h3>On ouvre votre compte pro</h3><p>On fait connaissance et on met en place votre compte professionnel.<!-- TODO-CLIENT: conditions d'ouverture de compte --></p></li>
+          <li class="step reveal"><span class="step__num">2</span><h3>Vous commandez par téléphone</h3><p>Un appel au 04 42 10 94 10 suffit : on vous confirme les disponibilités.<!-- TODO-CLIENT: minimum de commande --></p></li>
+          <li class="step reveal"><span class="step__num">3</span><h3>On livre en camion frigorifique</h3><p>Vos produits surgelés et frais arrivent chez vous, chaîne du froid respectée.<!-- TODO-CLIENT: délai et jours de tournée par secteur --></p></li>
+        </ol>
       </div>
     </section>
 
@@ -216,11 +233,16 @@
       <div class="container">
         <span class="kicker">Avis clients</span>
         <h2 class="section__title">Ils nous font confiance</h2>
+        <div class="reviews__head">
+          <p class="reviews__rating"><span class="reviews__stars" aria-hidden="true">★</span> <strong>4,8/5</strong> · 18 avis Google</p>
+          <a class="link" href="https://share.google/cPtYVRo3e0YYLz8D6" target="_blank" rel="noopener">Voir les 18 avis sur Google →</a>
+        </div>
         <div class="reviews__grid">
-          <blockquote class="review reveal"><p class="review__quote">Super produits, excellente qualité et un très bon service. Entreprise très réactive et fiable.</p><footer class="review__author">Xavier</footer></blockquote>
-          <blockquote class="review reveal"><p class="review__quote">Personnel sérieux et professionnel, accueil au top. Très à l'écoute dans le service client, jamais déçu.</p><footer class="review__author">Pascal</footer></blockquote>
-          <blockquote class="review reveal"><p class="review__quote">Que du positif : qualité, réactivité, collaboratif, et en plus géré par une famille formidable.</p><footer class="review__author">Bureau Marignane Natation</footer></blockquote>
-          <blockquote class="review reveal"><p class="review__quote">Accueil formidable, société très sérieuse. Merci.</p><footer class="review__author">Fawzia</footer></blockquote>
+          <blockquote class="review reveal"><p class="review__quote">Super produits, excellente qualité et un très bon service. Entreprise très réactive et fiable.</p><footer class="review__author">Xavier M.<span class="review__src">Avis Google</span></footer></blockquote>
+          <blockquote class="review reveal"><p class="review__quote">Personnel sérieux et professionnel, accueil au top. Très à l'écoute et dans le service client. Jamais déçu.</p><footer class="review__author">Pascal P.<span class="review__src">Avis Google</span></footer></blockquote>
+          <blockquote class="review reveal"><p class="review__quote">Que du positif ! Qualité, réactivité, collaboratif, et en plus géré par une famille formidable.</p><footer class="review__author">Bureau Marignane Natation<span class="review__src">Avis Google</span></footer></blockquote>
+          <blockquote class="review reveal"><p class="review__quote">Accueil formidable, société très sérieuse, merci.</p><footer class="review__author">Fawzia S.<span class="review__src">Avis Google</span></footer></blockquote>
+          <blockquote class="review reveal"><p class="review__quote">Très sympa et participant.</p><footer class="review__author">Marie-Hélène L.<span class="review__src">Avis Google</span></footer></blockquote>
         </div>
       </div>
     </section>
@@ -263,8 +285,8 @@
           </ul>
         </div>
       </nav>
-      <div class="footer__col footer__acc">
-        <button class="footer__acc-head" type="button" aria-expanded="false">Contact
+      <div class="footer__col footer__acc is-open">
+        <button class="footer__acc-head" type="button" aria-expanded="true">Contact
           <svg class="footer__acc-chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </button>
         <div class="footer__acc-body">
@@ -289,6 +311,11 @@
   <button class="to-top" type="button" aria-label="Revenir en haut de la page" data-to-top>
     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5 5 12m7-7 7 7M12 5v15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
   </button>
+
+  <nav class="mobilebar" aria-label="Actions rapides">
+    <a class="mobilebar__btn mobilebar__call" href="tel:+33442109410"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.9 15.9 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25c1.1.37 2.3.57 3.6.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.3.2 2.5.57 3.6a1 1 0 0 1-.25 1l-2.22 2.2Z" fill="currentColor"/></svg>Appeler</a>
+    <a class="mobilebar__btn mobilebar__cta" href="contact.html#devenir-client">Devenir client</a>
+  </nav>
 
   <script src="assets/js/main.js" defer></script>
 </body>

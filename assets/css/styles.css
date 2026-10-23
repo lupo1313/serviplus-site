@@ -114,6 +114,10 @@ strong{color:var(--ink);font-weight:700}
 .nav-overlay{position:fixed;inset:0;background:rgba(7,18,42,.5);z-index:98;opacity:0;transition:opacity .3s}
 .nav-overlay.is-open{opacity:1}
 
+/* Bouton appel header (mobile) + barre d'action fixe (mobile) */
+.header__call{display:none}
+.mobilebar{display:none}
+
 /* =========================================================
    Hero (accueil) - photo plein cadre, texte en bas
    ========================================================= */
@@ -204,6 +208,18 @@ strong{color:var(--ink);font-weight:700}
 .ziplist li{border:1px solid var(--line);border-radius:999px;padding:6px 14px;font-size:.88rem;font-weight:600;color:var(--ink)}
 
 /* =========================================================
+   FAQ
+   ========================================================= */
+.faq__list{margin-top:clamp(20px,3vw,32px);border-top:1px solid var(--line);max-width:860px}
+.faq__item{border-bottom:1px solid var(--line)}
+.faq__item summary{list-style:none;cursor:pointer;padding:18px 40px 18px 0;position:relative;font-family:var(--ff-head);font-weight:600;color:var(--ink);font-size:1.05rem}
+.faq__item summary::-webkit-details-marker{display:none}
+.faq__item summary::after{content:"";position:absolute;right:8px;top:24px;width:10px;height:10px;border-right:2px solid var(--muted);border-bottom:2px solid var(--muted);transform:rotate(45deg);transition:transform .25s}
+.faq__item[open] summary::after{transform:rotate(-135deg)}
+.faq__a{padding:0 0 18px}
+.faq__a p{color:var(--body)}
+
+/* =========================================================
    Contact
    ========================================================= */
 .contact{display:grid;grid-template-columns:1fr;gap:clamp(26px,4vw,48px)}
@@ -214,6 +230,36 @@ strong{color:var(--ink);font-weight:700}
 .contact__row h3{font-size:.8rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);font-weight:700;margin-bottom:2px}
 .contact__row a,.contact__row p{font-size:1.05rem;color:var(--ink);font-weight:600}
 .contact__actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:1.4rem}
+
+/* ---------- Formulaire "Devenir client" ---------- */
+.formwrap{display:grid;grid-template-columns:1fr;gap:clamp(22px,3.5vw,44px);align-items:start}
+.formwrap__intro p{margin-top:.9rem;color:var(--body)}
+.form{background:var(--off);border:1px solid var(--line);border-radius:14px;padding:clamp(20px,3vw,30px);display:flex;flex-direction:column;gap:16px}
+.form__row{display:grid;grid-template-columns:1fr;gap:16px}
+.field{display:flex;flex-direction:column;gap:6px}
+.field label,.fieldset legend{font-family:var(--ff-head);font-weight:600;font-size:.9rem;color:var(--ink);padding:0}
+.field input,.field select,.field textarea{
+  width:100%;min-height:48px;padding:12px 14px;border:1px solid var(--line);border-radius:8px;
+  font-family:var(--ff-body);font-size:1rem;background:#fff;color:var(--ink);
+}
+.field textarea{min-height:110px;resize:vertical}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--blue);box-shadow:0 0 0 3px rgba(23,102,216,.15)}
+.req{color:#c0392b}
+.field__err{color:#c0392b;font-size:.85rem;margin:0}
+.field--invalid input,.field--invalid select,.field--invalid textarea{border-color:#c0392b}
+.fieldset{border:none;padding:0;margin:0}
+.checks{display:grid;grid-template-columns:1fr 1fr;gap:8px 16px;margin-top:6px}
+.check{display:flex;align-items:flex-start;gap:8px;font-family:var(--ff-body);font-weight:400;font-size:.92rem;color:var(--body);cursor:pointer}
+.check input{width:18px;height:18px;min-height:0;margin-top:2px;flex:0 0 auto}
+.check--consent{margin-top:2px}
+.check--consent.field--invalid span{color:#c0392b}
+.hp{position:absolute !important;left:-9999px;width:1px;height:1px;opacity:0}
+.form__submit{align-self:flex-start}
+.form__status{margin:0;padding:12px 14px;border-radius:8px;font-weight:600}
+.form__status.is-ok{background:#e7f6ec;color:#1e7a46;border:1px solid #bfe6cd}
+.form__status.is-err{background:#fdeaea;color:#b23636;border:1px solid #f3c6c6}
+@media (min-width:560px){.form__row{grid-template-columns:1fr 1fr}.checks{grid-template-columns:repeat(3,1fr)}}
+@media (min-width:900px){.formwrap{grid-template-columns:.8fr 1.2fr}}
 
 /* =========================================================
    CTA bande (contact)
@@ -227,12 +273,28 @@ strong{color:var(--ink);font-weight:700}
 /* =========================================================
    Avis clients (sobre)
    ========================================================= */
-.reviews__grid{display:grid;grid-template-columns:1fr;gap:clamp(16px,2vw,24px);margin-top:clamp(24px,3vw,40px)}
-.review{background:#fff;border:1px solid var(--line);border-radius:12px;padding:clamp(20px,2.4vw,28px);margin:0;position:relative}
-.review::before{content:"\201C";position:absolute;top:8px;left:18px;font-family:Georgia,serif;font-size:3rem;line-height:1;color:var(--line)}
+.reviews__head{display:flex;flex-wrap:wrap;align-items:center;gap:6px 18px;margin-top:1rem}
+.reviews__rating{font-size:1.05rem;color:var(--ink)}
+.reviews__rating strong{font-family:var(--ff-head)}
+.reviews__stars{color:#f6b23d;font-size:1.15rem}
+.reviews__grid{display:flex;flex-wrap:wrap;justify-content:center;gap:clamp(16px,2vw,24px);margin-top:clamp(24px,3vw,40px)}
+.review{flex:1 1 300px;max-width:360px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:2.7rem 1.5rem 1.4rem;margin:0;position:relative}
+.review::before{content:"\201C";position:absolute;top:10px;left:18px;font-family:Georgia,serif;font-size:3rem;line-height:1;color:#d7e0ec}
 .review__quote{color:var(--ink);font-size:1rem;line-height:1.6;position:relative}
 .review__author{margin-top:14px;font-family:var(--ff-head);font-weight:600;color:var(--blue);font-size:.92rem}
-@media (min-width:768px){.reviews__grid{grid-template-columns:repeat(2,1fr)}}
+.review__src{display:block;font-family:var(--ff-body);font-weight:400;color:var(--muted);font-size:.78rem;margin-top:2px}
+
+/* Lien texte bleu (utilitaire) */
+.link{color:var(--blue);font-weight:600;text-decoration:none}
+.link:hover{text-decoration:underline;text-underline-offset:2px}
+
+/* Étapes "comment ça marche" */
+.steps{display:grid;grid-template-columns:1fr;gap:clamp(20px,3vw,34px);margin-top:clamp(24px,3vw,40px);padding:0;list-style:none}
+.step{margin:0}
+.step__num{display:inline-flex;align-items:center;justify-content:center;width:42px;height:42px;border-radius:50%;background:var(--navy);color:#fff;font-family:var(--ff-head);font-weight:700;font-size:1.1rem;margin-bottom:14px}
+.step h3{font-size:1.12rem;font-weight:700;color:var(--ink);margin-bottom:.35rem}
+.step p{font-size:.95rem}
+@media (min-width:768px){.steps{grid-template-columns:repeat(3,1fr)}}
 
 /* =========================================================
    Pied de page
@@ -323,6 +385,28 @@ strong{color:var(--ink);font-weight:700}
 }
 @media (min-width:900px){
   .nav-overlay{display:none}
+}
+
+/* ----- Appel header + barre d'action (mobile) ----- */
+@media (max-width:767px){
+  .header__call{
+    display:inline-flex;align-items:center;justify-content:center;margin-left:auto;
+    width:46px;height:46px;border:1px solid var(--line);border-radius:10px;color:var(--blue);background:#fff;flex:0 0 auto;
+  }
+  .header__call svg{width:22px;height:22px}
+  .mobilebar{
+    display:flex;position:fixed;left:0;right:0;bottom:0;z-index:95;gap:8px;padding:8px 10px;
+    background:#fff;border-top:1px solid var(--line);box-shadow:0 -6px 20px -14px rgba(11,29,64,.55);
+  }
+  .mobilebar__btn{
+    flex:1;display:inline-flex;align-items:center;justify-content:center;gap:.5em;min-height:48px;
+    font-family:var(--ff-head);font-weight:600;font-size:.98rem;border-radius:10px;
+  }
+  .mobilebar__call{background:#fff;color:var(--navy);border:1.5px solid var(--navy)}
+  .mobilebar__call svg{width:20px;height:20px}
+  .mobilebar__cta{background:var(--blue);color:#fff}
+  .menu-open .mobilebar{display:none}
+  body{padding-bottom:64px}
 }
 
 /* ----- Préférence mouvement réduit ----- */

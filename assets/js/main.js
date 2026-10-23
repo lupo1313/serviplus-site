@@ -17,6 +17,7 @@
     nav.classList.add("is-open");
     if (overlay) { overlay.hidden = false; requestAnimationFrame(() => overlay.classList.add("is-open")); }
     burger.setAttribute("aria-expanded", "true");
+    document.body.classList.add("menu-open");
     document.body.style.overflow = "hidden";
     const first = nav.querySelector("a, button");
     if (first) first.focus();
@@ -25,6 +26,7 @@
     nav.classList.remove("is-open");
     if (overlay) { overlay.classList.remove("is-open"); setTimeout(() => { overlay.hidden = true; }, 300); }
     burger.setAttribute("aria-expanded", "false");
+    document.body.classList.remove("menu-open");
     document.body.style.overflow = "";
   }
   if (burger) burger.addEventListener("click", openMenu);
@@ -97,5 +99,52 @@
     } else {
       nums.forEach(run);
     }
+  }
+
+  /* ---------- Formulaire "Devenir client" ---------- */
+  const form = document.getElementById("contact-form");
+  if (form) {
+    const status = document.getElementById("form-status");
+    const showStatus = (msg, ok) => {
+      status.hidden = false;
+      status.textContent = msg;
+      status.classList.toggle("is-ok", ok);
+      status.classList.toggle("is-err", !ok);
+    };
+    const validate = () => {
+      let valid = true;
+      form.querySelectorAll("[required]").forEach((el) => {
+        const ok = el.type === "checkbox" ? el.checked : el.value.trim() !== "";
+        const field = el.closest(".field") || el.closest(".check--consent");
+        if (field) field.classList.toggle("field--invalid", !ok);
+        const errId = el.getAttribute("aria-describedby");
+        if (errId) { const err = document.getElementById(errId); if (err) err.hidden = ok; }
+        if (!ok) valid = false;
+      });
+      return valid;
+    };
+    form.addEventListener("submit", async (e) => {
+      if (!validate()) { e.preventDefault(); const bad = form.querySelector(".field--invalid input, .field--invalid select"); if (bad) bad.focus(); return; }
+      if (form.querySelector("[name=botcheck]").checked) { e.preventDefault(); return; }
+      if (!window.fetch || !window.FormData) { return; } // fallback : POST natif
+      e.preventDefault();
+      const btn = form.querySelector("[type=submit]");
+      const label = btn.textContent;
+      btn.disabled = true; btn.textContent = "Envoi…";
+      try {
+        const res = await fetch(form.action, { method: "POST", body: new FormData(form), headers: { Accept: "application/json" } });
+        const data = await res.json().catch(() => ({}));
+        if (res.ok && data.success !== false) {
+          form.reset();
+          showStatus("Merci, votre demande a bien été envoyée. On vous recontacte rapidement.", true);
+        } else {
+          showStatus("Une erreur est survenue. Vous pouvez nous appeler au 04 42 10 94 10.", false);
+        }
+      } catch (err) {
+        showStatus("Envoi impossible pour le moment. Appelez-nous au 04 42 10 94 10.", false);
+      } finally {
+        btn.disabled = false; btn.textContent = label;
+      }
+    });
   }
 })();
