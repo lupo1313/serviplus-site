@@ -1,0 +1,65 @@
+# ===================================================================
+# Groupe SERVIPLUS — .htaccess (hébergement Apache / SiteGround)
+# NB : ce fichier est ignoré par GitHub Pages. Il sert pour la prod Apache.
+# ===================================================================
+
+# --- Forçage HTTPS + www ---
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteCond %{HTTPS} off [OR]
+  RewriteCond %{HTTP_HOST} !^www\. [NC]
+  RewriteCond %{HTTP_HOST} ^(?:www\.)?(.+)$ [NC]
+  RewriteRule ^ https://www.%1%{REQUEST_URI} [L,R=301]
+</IfModule>
+
+# --- Redirections 301 des anciennes URLs WordPress vers les nouvelles pages ---
+<IfModule mod_alias.c>
+  Redirect 301 /grossiste-accueil/qui-sommes-nous/ /entreprise.html
+  Redirect 301 /our-menu/ /produits.html
+  Redirect 301 /notre-catalogue/ /produits.html
+  Redirect 301 /promotions/ /produits.html
+  Redirect 301 /contact/ /contact.html
+  Redirect 301 /mentions-legales/ /mentions-legales.html
+
+  Redirect 301 /pommes-de-terre/ /produits.html#pommes-de-terre
+  Redirect 301 /pains-hamburger/ /produits.html#pains-hamburger
+  Redirect 301 /pains/ /produits.html#pains
+  Redirect 301 /la-volaille/ /produits.html#volaille
+  Redirect 301 /le-boeuf/ /produits.html#boeuf
+  Redirect 301 /le-poisson/ /produits.html#poisson
+  Redirect 301 /kebab/ /produits.html#kebab
+  Redirect 301 /halal/ /produits.html#halal
+  Redirect 301 /tapas/ /produits.html#tapas
+  Redirect 301 /les-sauces/ /produits.html#sauces
+  Redirect 301 /les-huiles/ /produits.html#huiles
+  Redirect 301 /les-boissons/ /produits.html#boissons
+  Redirect 301 /dessert/ /produits.html#desserts
+  Redirect 301 /glace/ /produits.html#glaces
+</IfModule>
+
+# --- Page d'erreur 404 ---
+ErrorDocument 404 /404.html
+
+# --- Compression (gzip) ---
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css text/javascript application/javascript application/json image/svg+xml application/xml application/rss+xml
+</IfModule>
+
+# --- Cache navigateur ---
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType text/html "access plus 0 seconds"
+  ExpiresByType text/css "access plus 1 year"
+  ExpiresByType application/javascript "access plus 1 year"
+  ExpiresByType image/webp "access plus 1 year"
+  ExpiresByType image/png "access plus 1 year"
+  ExpiresByType image/jpeg "access plus 1 year"
+  ExpiresByType image/svg+xml "access plus 1 year"
+  ExpiresByType font/woff2 "access plus 1 year"
+  ExpiresByType application/pdf "access plus 1 month"
+</IfModule>
+<IfModule mod_headers.c>
+  <FilesMatch "\.(css|js|webp|png|jpe?g|svg|woff2)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+</IfModule>

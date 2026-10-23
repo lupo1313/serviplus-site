@@ -102,3 +102,21 @@ au nouveau logo puis relancer l'assemblage.
 - Quelques visuels produits sont des approximations faute de photo exacte :
   « Frites » utilise une photo de pommes de terre, « Pizzas & tapas » une photo de tapas.
   Remplaçables dans `assets/img/` (garder les mêmes noms de fichiers).
+
+## Checklist de mise en ligne (migration vers le domaine)
+
+1. **Domaine / DNS** : faire pointer `groupeserviplus.com` vers l'hébergeur. Pour GitHub Pages,
+   ajouter un fichier `CNAME` (contenant `www.groupeserviplus.com`) + enregistrements DNS.
+   Pour SiteGround/Apache, uploader le site dans `public_html/` (le `.htaccess` gère HTTPS+www,
+   les 301 et le cache ; il est ignoré par GitHub Pages).
+2. **URLs absolues** : vérifier `canonical`, `og:url` et `sitemap.xml` avec le domaine final
+   (ils utilisent déjà `https://www.groupeserviplus.com/`).
+3. **Redirections 301** : tester les anciennes URLs WordPress avec `curl -I`, par ex.
+   `curl -I https://www.groupeserviplus.com/our-menu/` doit renvoyer `301` vers `/produits.html`.
+   Contrôler aussi `/halal/`, `/contact/`, `/le-boeuf/`, `/mentions-legales/`, etc.
+4. **Formulaire** : créer la clé Web3Forms et remplacer `TODO_WEB3FORMS_KEY` dans `contact.html`,
+   puis envoyer un test.
+5. **Search Console** : ajouter la propriété, soumettre `sitemap.xml`, demander l'indexation.
+6. **Fiche Google Business** : vérifier adresse, horaires (voir l'écart 13h/13h30) et lien du site.
+7. **Aperçu Open Graph** : tester le partage de lien (image `og-image.jpg`).
+8. **TODO-CLIENT.md** : traiter les points restants (fichier à la racine).
