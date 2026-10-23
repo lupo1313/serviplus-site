@@ -96,12 +96,12 @@
             <h2 class="section__title">Ouvrez votre compte pro ou faites-vous rappeler</h2>
             <p>Remplissez ce formulaire, on vous recontacte rapidement. Vous pouvez aussi appeler directement le <a class="link" href="tel:+33442109410">04 42 10 94 10</a>.</p>
           </div>
-          <form class="form" id="contact-form" action="https://api.web3forms.com/submit" method="POST" novalidate>
-            <!-- TODO-CLIENT: remplacer TODO_WEB3FORMS_KEY par la vraie clé Web3Forms -->
-            <input type="hidden" name="access_key" value="TODO_WEB3FORMS_KEY">
-            <input type="hidden" name="subject" value="Nouveau contact pro - site SERVIPLUS">
-            <input type="hidden" name="from_name" value="Site Groupe SERVIPLUS">
-            <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <!-- TODO-CLIENT: adresse de test. En prod, remplacer flopezoanes@gmail.com par sarlserviplus@gmail.com -->
+          <form class="form" id="contact-form" action="https://formsubmit.co/flopezoanes@gmail.com" method="POST" novalidate>
+            <input type="hidden" name="_subject" value="Nouveau contact pro - site SERVIPLUS">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
 
             <div class="form__row">
               <div class="field">

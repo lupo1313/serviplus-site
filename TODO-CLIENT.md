@@ -3,9 +3,11 @@
 Éléments manquants ou à valider par le client avant la mise en production.
 Chaque point correspond à un placeholder `<!-- TODO-CLIENT: ... -->` dans le code.
 
-## Formulaire de contact (LOT 2)
-- [ ] **Clé Web3Forms** : créer un compte gratuit sur https://web3forms.com, récupérer l'`access_key`
-  et remplacer `TODO_WEB3FORMS_KEY` dans `contact.html`.
+## Formulaire de contact (FormSubmit)
+- [ ] **Activer le formulaire** : à la 1re soumission, FormSubmit envoie un e-mail de confirmation à
+  l'adresse de destination. Cliquer le lien d'activation **une seule fois**. (Aucun compte ni clé requis.)
+- [ ] **Adresse de destination** : actuellement **`flopezoanes@gmail.com`** (test). En production,
+  remplacer par **`sarlserviplus@gmail.com`** dans `contact.html` (attribut `action` du formulaire).
 - [ ] **Durée de conservation** des données collectées via le formulaire (pour les mentions légales).
 
 ## Livraison / logistique (LOT 1 & 2)

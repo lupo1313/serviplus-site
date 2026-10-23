@@ -125,14 +125,16 @@
     };
     form.addEventListener("submit", async (e) => {
       if (!validate()) { e.preventDefault(); const bad = form.querySelector(".field--invalid input, .field--invalid select"); if (bad) bad.focus(); return; }
-      if (form.querySelector("[name=botcheck]").checked) { e.preventDefault(); return; }
+      const honey = form.querySelector("[name=_honey]");
+      if (honey && honey.value) { e.preventDefault(); return; }
       if (!window.fetch || !window.FormData) { return; } // fallback : POST natif
       e.preventDefault();
       const btn = form.querySelector("[type=submit]");
       const label = btn.textContent;
       btn.disabled = true; btn.textContent = "Envoi…";
       try {
-        const res = await fetch(form.action, { method: "POST", body: new FormData(form), headers: { Accept: "application/json" } });
+        const endpoint = form.action.replace("formsubmit.co/", "formsubmit.co/ajax/");
+        const res = await fetch(endpoint, { method: "POST", body: new FormData(form), headers: { Accept: "application/json" } });
         const data = await res.json().catch(() => ({}));
         if (res.ok && data.success !== false) {
           form.reset();
